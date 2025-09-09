@@ -22,12 +22,12 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
-            - mlflow
-            - server
-            - --host=0.0.0.0
-            - --port={{ .Values.service.port | quote }}
-            - --backend-store-uri={{ .Values.mlflow.backendStoreUri | quote }}
-            - --default-artifact-root={{ .Values.mlflow.artifactRoot | quote }}
+            - "mlflow"
+            - "server"
+            - "--host"
+            - "0.0.0.0"
+            - "--port"
+            - { { .Values.service.port | int } }
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
