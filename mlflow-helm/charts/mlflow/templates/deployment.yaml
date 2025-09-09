@@ -22,11 +22,11 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
-            - "mlflow"
-            - "server"
-            - "--host"
-            - "0.0.0.0"
-            - "--port"
+            - mlflow
+            - server
+            - --host
+            - 0.0.0.0
+            - --port
             - { { .Values.service.port | int } }
           ports:
             - name: http
