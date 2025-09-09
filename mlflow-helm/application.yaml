@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/EugeneChurylov/mlops-mlflow-helm.git"  # ЗАМІНИ на свій репозиторій після пушу
     targetRevision: main
-    path: charts/mlflow
+    path: mlflow-helm/charts/mlflow
     helm:
       valueFiles:
         - values.yaml
